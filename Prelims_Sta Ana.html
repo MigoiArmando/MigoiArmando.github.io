@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+    <title>ONLINE RESUME USING HTML</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: rgb(0, 0, 26);
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+        }
+        p {
+            color: white;
+            text-align: justify;
+
+        }
+        h1, h2, h3, h4, h5, h6 {
+            margin-top: 20px;
+            color: white;
+        }
+        img {
+            width: 100%; 
+            max-width: 200px; 
+            height: auto;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            color: white;
+        }
+        th, td, tr {
+            padding: 8px;
+            text-align: center; 
+            border-bottom: 1px solid #ddd;
+        }
+        ul, ol, li {
+            color: white;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 10px;
+        }
+        @media (max-width: 600px) {
+            .container, img {
+                width: 100%;
+                padding: 10px;
+            }
+            nav ul li {
+                display: block;
+                margin: 5px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="container-fluid">
+        <ul>
+            <li><strong>Resume</strong></li>
+        </ul>
+        <ul>
+            <li><a href="javascript:void(0)" onclick="scrollToElement('personal-statement')">About</a></li>
+            <li><a href="javascript:void(0)" onclick="highlightElement('contact-info')" role="button">Contact</a></li>
+        </ul>
+    </nav>
+    <main class="container">
+        <div class="grid">
+            <section>
+                <img src="https://lh3.googleusercontent.com/a/ACg8ocLQOZPLqEDHWHpWZBxllwZmcRoGPlfLMVfF0e6fC1opQQ=s288-c-no" alt="Profile Photo">
+                <h1>Miguel Armand B. Sta Ana</h1>
+                <div id="contact-info">
+                    <p><i class="fas fa-map-marker-alt"></i> Libmanan, Camarines Sur, Philippines</p>
+                    <p><i class="fas fa-envelope"></i> migstaana@gbox.adnu.edu.ph</p>
+                    <p><i class="fas fa-phone"></i> +639267074401</p>
+                </div>
+                
+                <hr>
+                <h2 id="personal-statement">Personal Statement</h2>
+                <p>I am a passionate and dedicated student seeking to further improve my skills in 
+                    programming and web development. My dedication to excellence and continuous 
+                    improvement drives me to achieve the best results in all my endeavors to be able 
+                    to have a wonderful career in the IT industry.</p>
+                <hr>
+                <h2>Education</h2>
+                <table>
+                    <tr>
+                        <th><b>Year</b></th>
+                        <th><b>Institution</b></th>
+                        <th><b>Degree</b></th>
+                    </tr>
+                    <tr>
+                        <td>2008 - 2016</td>
+                        <td>Southbridges Learning Center</td>
+                        <td>N/A</td>
+                    </tr>
+                    <tr>
+                        <td>2017 - 2021</td>
+                        <td>Colegio del Santisimo Rosario</td>
+                        <td>N/A</td>
+                    </tr>
+                    <tr>
+                        <td>2022 - Present</td>
+                        <td>Ateneo de Naga University</td>
+                        <td>Bachelor of Science in Information Technology</td>
+                    </tr>
+                </table>
+                <hr>
+                <h2>Skills</h2>
+                <h3>General Skills</h3>
+                <ul>
+                    <li>Adaptive Skills</li>
+                    <li>Can work under pressure</li>
+                    <li>Communication and Cooperative Skills</li>
+                </ul>
+                <h3>Technical Skills</h3>
+                <ul>
+                    <li>HTML & CSS</li>
+                    <li>JavaScript</li>
+                    <li>Java</li>
+                    <li>C++ / C</li>
+                    <li>R</li>
+                </ul>
+                <hr>
+                <h2>Character References</h2>
+                <p>Available upon request.</p>
+                <hr>
+                <h2>Additional Information</h2>
+                <h3>Work Experience</h3>
+                <p>N/A</p>
+                <h3>Certifications</h3>
+                <ol>
+                    <li>APC 7th Placer</li>
+                    <li>Certified Cisco Networking Associate</li>
+                    <li>Certified Fit Academy Smartbooks and Power BI</li>
+                </ol>
+            </section>
+        </div>
+    </main>
+    <script>
+        function scrollToElement(elementId) {
+          const element = document.getElementById(elementId);
+          if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+          } else {
+            console.error('Element with ID ' + elementId + ' not found.');
+          }
+        }
+      
+        function highlightElement(elementId) {
+          const element = document.getElementById(elementId);
+          if (element) {
+            element.style.transition = "background-color 0.3s ease-in-out";
+            element.style.backgroundColor = "blue";
+            setTimeout(() => {
+              element.style.backgroundColor = "";
+            }, 500);
+          } else {
+            console.error('Element with ID ' + elementId + ' not found.');
+          }
+        }
+      </script>      
+</body>
+</html>
